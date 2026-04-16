@@ -1,0 +1,43 @@
+
+Infix to Postfix Pseudocode:
+
+function infixToPostfix(expression):
+    create empty stack S
+    create empty string output
+
+    for each character c in expression:
+        if c is operand:
+            append c to output
+        else if c is '(':
+            push c to S
+        else if c is ')':
+            while top of S != '(':
+                pop from S and append to output
+            pop '(' from S
+        else if c is operator:
+            while S not empty and precedence(top of S) >= precedence(c):
+                pop from S and append to output
+            push c to S
+
+    while S not empty:
+        pop from S and append to output
+
+    return output
+
+
+
+Infix to Prefix Pseudocode:
+
+function infixToPrefix(expression):
+    reverse expression
+    for each character c in reversed expression:
+        if c == '(':
+            replace with ')'
+        else if c == ')':
+            replace with '('
+
+    postfix = infixToPostfix(modified expression)
+    prefix = reverse(postfix)
+    return prefix
+
+
