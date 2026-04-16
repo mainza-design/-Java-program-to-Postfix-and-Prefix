@@ -19,7 +19,7 @@ How It Works
 * For operators, pop from the stack while the top operator has higher or equal precedence, then push the current operator.
 * After processing the entire expression, pop any remaining operators to the output.
   
-#### Infix to Prefix Conversion
+### Infix to Prefix Conversion
 * Reverse the infix expression.
 * Swap '(' with ')' and vice versa.
 * Convert the modified expression to postfix using the above method.
